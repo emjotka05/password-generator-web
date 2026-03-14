@@ -67,6 +67,13 @@ span{
     margin-top: 51px;
     margin-bottom: 0px;
     width: fit-content;
+    cursor: pointer;
+    transition: 0.4s ease;
+}
+
+#generate-btn:hover{
+    background-color: #059669;
+    transform: scale(102%);
 }
 
 .password-btn{

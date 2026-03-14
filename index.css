@@ -87,6 +87,10 @@ span{
     font-size: 1rem;
     padding: 10px;
     padding-bottom: 12px;
+    cursor: pointer;
+}
+.password-btn:hover{
+    background-color: #2e3a4b;
 }
 
 #password-buttons{

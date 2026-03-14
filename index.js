@@ -26,8 +26,14 @@ const characters = [
 let generateBtnEl = document.getElementById("generate-btn")
 let passwordOneEl = document.getElementById("passwordOne")
 let passwordTwoEl = document.getElementById("passwordTwo")
+let passwordButtons = document.querySelectorAll(".password-btn")
+
+passwordButtons.forEach(button => {
+    button.addEventListener("click", copyPassword)
+})
 
 generateBtnEl.addEventListener("click", generatePasswords)
+
 
 function generatePasswords() {
     let password_one = ""
@@ -43,3 +49,15 @@ function generatePasswords() {
 function getRandomNum(){
     return Math.floor(Math.random() * characters.length)
 }
+
+function copyPassword(event){
+    let clickedButton = event.target
+    let password = clickedButton.textContent
+    if(password === ""){return}
+    navigator.clipboard.writeText(password)
+    clickedButton.textContent = "Copied to clipboard!"
+
+    setTimeout(function(){ clickedButton.textContent = password},2000)
+}
+
+//TODO: add responsive design, accessibility, border animation.

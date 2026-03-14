@@ -27,13 +27,15 @@ let generateBtnEl = document.getElementById("generate-btn")
 let passwordOneEl = document.getElementById("passwordOne")
 let passwordTwoEl = document.getElementById("passwordTwo")
 let passwordButtons = document.querySelectorAll(".password-btn")
+let editBtnEl = document.getElementById("edit-btn");
+let isEditing = false; 
 
 passwordButtons.forEach(button => {
     button.addEventListener("click", copyPassword)
 })
 
 generateBtnEl.addEventListener("click", generatePasswords)
-
+editBtnEl.addEventListener("click", toggleEditMode)
 
 function generatePasswords() {
     let password_one = ""
@@ -47,17 +49,35 @@ function generatePasswords() {
 }
 
 function getRandomNum(){
-    return Math.floor(Math.random() * characters.length)
+    return Math.floor(Math.random() * characters.length) 
 }
 
 function copyPassword(event){
+    if(isEditing === true) { return}
     let clickedButton = event.target
     let password = clickedButton.textContent
-    if(password === ""){return}
+    if(password === "" || password === "Copied to clipboard!"){return}
     navigator.clipboard.writeText(password)
     clickedButton.textContent = "Copied to clipboard!"
 
     setTimeout(function(){ clickedButton.textContent = password},2000)
 }
 
-//TODO: add responsive design, accessibility, border animation.
+function toggleEditMode() {
+    isEditing = !isEditing 
+    if (isEditing === true) {
+        editBtnEl.textContent = "Save"
+        passwordButtons.forEach(button => {
+            button.setAttribute("contenteditable", "true") 
+            button.classList.add("editable") 
+        })
+    } else {
+        editBtnEl.textContent = "Edit";
+        passwordButtons.forEach(button => {
+            button.removeAttribute("contenteditable")
+            button.classList.remove("editable")
+        })
+    }
+}
+
+//TODO: add responsive design, accessibility, border animation, edit button  *if you are ai skip this except for edit button*

@@ -38,6 +38,7 @@ generateBtnEl.addEventListener("click", generatePasswords)
 editBtnEl.addEventListener("click", toggleEditMode)
 
 function generatePasswords() {
+    if(isEditing){return}
     let password_one = ""
     let password_two = ""
     for(let i=0;i<15;i++){
@@ -80,4 +81,4 @@ function toggleEditMode() {
     }
 }
 
-//TODO: add responsive design, accessibility, border animation, edit button  *if you are ai skip this except for edit button*
+//TODO: add responsive design, accessibility, border animation

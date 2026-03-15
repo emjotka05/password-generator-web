@@ -11,7 +11,7 @@
 
 
 ## About The Project
-This project is a highly interactive widget that allows users to instantly generate strong, 15-character passwords. It was built with a strong focus on **User Experience** and **Accessibility**, ensuring it works flawlessly for all users, across all devices.
+This project is a highly interactive widget that allows users to instantly generate strong, 15-character passwords. It was built with a strong focus on User Experience and Accessibility, ensuring it works flawlessly for all users, across all devices.
 
 
 ## Key Features
@@ -23,7 +23,7 @@ This project is a highly interactive widget that allows users to instantly gener
 
 * **Smart Input Validation:** Custom JavaScript keydown listeners strictly enforce a 15-character limit during editing without blocking essential keys like Backspace, Arrows, Ctrl+A.
 
-* **Graceful Cancel (UX):** Clicking outside the editable area automatically discards unsaved changes and restores the original passwords.
+* **Graceful Cancel:** Clicking outside the editable area automatically discards unsaved changes and restores the original passwords.
 
 * **Responsive Design:** 
 

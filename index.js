@@ -80,7 +80,7 @@ function copyPassword(event){
     clickedButton.textContent = "Copied to clipboard!"
     announcer.textContent = "Password copied to clipboard!"
 
-    setTimeout(function(){ clickedButton.textContent = password},2000)
+    setTimeout(function(){ clickedButton.textContent = password},1500)
 }
 
 function toggleEditMode() {
